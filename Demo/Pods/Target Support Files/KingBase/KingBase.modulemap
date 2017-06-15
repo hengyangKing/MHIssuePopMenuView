@@ -1,0 +1,6 @@
+framework module KingBase {
+  umbrella header "KingBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

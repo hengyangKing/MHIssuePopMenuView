@@ -1,0 +1,6 @@
+framework module MHIssuePopMenuView {
+  umbrella header "MHIssuePopMenuView-umbrella.h"
+
+  export *
+  module * { export * }
+}

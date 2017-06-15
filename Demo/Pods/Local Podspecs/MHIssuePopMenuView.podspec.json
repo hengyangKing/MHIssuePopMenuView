@@ -1,0 +1,29 @@
+{
+  "name": "MHIssuePopMenuView",
+  "version": "0.0.1",
+  "summary": "MHIssuePopMenuView",
+  "description": "a popmenu view for the musichome issue pop view",
+  "homepage": "https://github.com/hengyangKing/MHIssuePopMenuView",
+  "license": "MIT",
+  "authors": {
+    "hengyangKing": "hengyangKing.yeah.net"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/hengyangKing/MHIssuePopMenuView.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "Classes",
+    "Classes/**/*.{h,m}"
+  ],
+  "resources": "Classes/Resources/*.wav",
+  "frameworks": "AudioToolbox",
+  "dependencies": {
+    "pop": [
+
+    ]
+  }
+}

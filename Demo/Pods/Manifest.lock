@@ -1,0 +1,22 @@
+PODS:
+  - KingBase/MHTopWindow (0.0.4)
+  - MHIssuePopMenuView (0.0.1):
+    - pop
+  - pop (1.0.9)
+
+DEPENDENCIES:
+  - KingBase/MHTopWindow
+  - MHIssuePopMenuView (from `../`)
+
+EXTERNAL SOURCES:
+  MHIssuePopMenuView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KingBase: 798276a502bcc0678757d87559203dc8443b2bdd
+  MHIssuePopMenuView: 8a50a340fd9dc758d3aea06c48eaca20c3475d33
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+
+PODFILE CHECKSUM: 3208e3aa9e69db20b5fb11291bf32aae620da7e0
+
+COCOAPODS: 1.1.1
