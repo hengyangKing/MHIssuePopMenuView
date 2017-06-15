@@ -6,17 +6,13 @@ PODS:
 
 DEPENDENCIES:
   - KingBase/MHTopWindow
-  - MHIssuePopMenuView (from `../`)
-
-EXTERNAL SOURCES:
-  MHIssuePopMenuView:
-    :path: ../
+  - MHIssuePopMenuView
 
 SPEC CHECKSUMS:
   KingBase: 798276a502bcc0678757d87559203dc8443b2bdd
-  MHIssuePopMenuView: 8a50a340fd9dc758d3aea06c48eaca20c3475d33
+  MHIssuePopMenuView: 49583923cc498bf6ca54c0a9eaf6c136e428227b
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 3208e3aa9e69db20b5fb11291bf32aae620da7e0
+PODFILE CHECKSUM: 64f7a9be712ac76f59286867b257377097f20ed1
 
 COCOAPODS: 1.1.1
