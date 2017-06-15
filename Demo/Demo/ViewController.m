@@ -30,7 +30,7 @@
 
     } andSelectdCompletionBlock:^(MHPopMenuData *menuData, NSInteger index) {
         
-    } andwillDisMissBlock:^(BOOL willDisMiss) {
+    } andDisMissBlock:^(BOOL disMiss) {
         [[MHTopWindow sharedTopWindow]setStatusBarHidden:NO] ;
     }];
 }

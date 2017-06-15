@@ -10,12 +10,13 @@
 #import "MHIssuePopMenuViewConfig.h"
 
 typedef void(^SelectdCompletionBlock)(MHPopMenuData *menuData,NSInteger index);
-typedef void(^willDisMissBlock)(BOOL willDisMiss);
+typedef void(^DisMissBlock)(BOOL disMiss);
 
 typedef void(^willShowBlock)();
 
+
 @interface MHIssuePopMenuView : UIView
 
-+(void)CreatePopMeunWithConfig:(MHIssuePopMenuViewConfig *)config andWillShowBlock:(willShowBlock)willShowBlock andSelectdCompletionBlock:(SelectdCompletionBlock)block andwillDisMissBlock:(willDisMissBlock)willDisBlock;
++(void)CreatePopMeunWithConfig:(MHIssuePopMenuViewConfig *)config andWillShowBlock:(willShowBlock)willShowBlock andSelectdCompletionBlock:(SelectdCompletionBlock)block andDisMissBlock:(DisMissBlock)disBlock;
 
 @end

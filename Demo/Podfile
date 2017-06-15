@@ -5,8 +5,8 @@ source'https://git.coding.net/hengyang_King/MusicHomeSpecs.git'
 #公有库
 source'https://github.com/CocoaPods/Specs.git' 
 target 'Demo' do
- 	#pod 'MHIssuePopMenuView', :path =>'../'
- 	pod 'MHIssuePopMenuView'
+ 	pod 'MHIssuePopMenuView', :path =>'../'
+ 	#pod 'MHIssuePopMenuView'
 
  	pod 'KingBase/MHTopWindow'
 

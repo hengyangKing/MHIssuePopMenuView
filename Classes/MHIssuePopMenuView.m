@@ -25,48 +25,25 @@
 {
     UIWindow *_window;
 }
-@property (nonatomic,weak) UIView *BlurView;
-@property (nonatomic,copy) willDisMissBlock willDisBlock;
+@property (nonatomic,copy) DisMissBlock disBlock;
 @property (nonatomic,copy) SelectdCompletionBlock selectdBlock;
 @property (nonatomic,strong)MHIssuePopMenuViewConfig *config;
-@property (nonatomic,weak) UIView *TopView;     //自定义的顶部视图   Custom top view
+@property (nonatomic,weak) UIView *TopView;
+@property (nonatomic,weak) UIView *BlurView;
 
 @end
 @implementation MHIssuePopMenuView
-+(void)CreatePopMeunWithConfig:(MHIssuePopMenuViewConfig *)config andWillShowBlock:(willShowBlock)willShowBlock andSelectdCompletionBlock:(SelectdCompletionBlock)block andwillDisMissBlock:(willDisMissBlock)willDisBlock
+
++(void)CreatePopMeunWithConfig:(MHIssuePopMenuViewConfig *)config andWillShowBlock:(willShowBlock)willShowBlock andSelectdCompletionBlock:(SelectdCompletionBlock)block andDisMissBlock:(DisMissBlock)disBlock
 {
     MHIssuePopMenuView *popView=[[MHIssuePopMenuView alloc]initWithConfig:config];
     popView.selectdBlock=block;
-    popView.willDisBlock=willDisBlock;
+    popView.disBlock=disBlock;
     if (willShowBlock) {
         willShowBlock();
     }
     [popView show];
 }
-//
-//+(void)CreatingPopMenuObjectItmes:(NSArray<MHPopMenuData *> *)Items SelectdCompletionBlock:(SelectdCompletionBlock)block andDisMissBlock:(DisMissBlock)disBlock
-//{
-//    
-//    NSArray *buttonArray=@[[MHPopMenuData CreateLabelIconName:@"issue_record_n" andTitle:@"录音"],[MHPopMenuData CreateLabelIconName:@"take_video_n" andTitle:@"录视频"],[MHPopMenuData CreateLabelIconName:@"issue_text_n" andTitle:@"发图文"],[MHPopMenuData CreateLabelIconName:@"userOwn_video_n" andTitle:@"发本地视频"]];
-//    
-//    
-//    
-//    NSMutableDictionary *AudioDictionary = [NSMutableDictionary dictionary];
-//    
-//    //添加弹出菜单音效
-//    [AudioDictionary setObject:@"composer_open" forKey:kMHPopMenuViewOpenAudioNameKey];
-//    [AudioDictionary setObject:@"wav" forKey:kMHPopMenuViewOpenAudioTypeKey];
-//    //添加取消菜单音效
-//    [AudioDictionary setObject:@"composer_close" forKey:kMHPopMenuViewCloseAudioNameKey];
-//    [AudioDictionary setObject:@"wav" forKey:kMHPopMenuViewCloseAudioTypeKey];
-//    //添加选中按钮音效
-//    [AudioDictionary setObject:@"composer_select" forKey:kMHPopMenuViewSelectAudioNameKey];
-//    [AudioDictionary setObject:@"wav" forKey:kMHPopMenuViewSelectAudioTypeKey];
-//    
-//    Items=Items?buttonArray:Items;
-//    [self CreatingPopMenuObjectItmes:Items TopView:nil OpenOrCloseAudioDictionary:AudioDictionary SelectdCompletionBlock:block andDisMissBlock:disBlock];
-//
-//}
 -(instancetype)initWithConfig:(MHIssuePopMenuViewConfig *)config
 {
     self=[super initWithFrame:CGRectMake(0, 0, kW, kH)];
@@ -181,7 +158,6 @@
             [CancelButton setAlpha:0.1f];
             CancelButton.transform = CGAffineTransformMakeRotation(0);
             [downView setBackgroundColor:self.config.cancelBGViewDismissColor];
-//            [downView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage getShitBGImage:[UIImage imageNamed:@"clearColorImage"]]]];
         }];
         
         [self StartTheAnimationFromValue:fromValue ToValue:toValue Delay:delay Object:button CompletionBlock:^(BOOL CompletionBlock) {
@@ -229,7 +205,6 @@
     typeof(self) weak = self;
     [UIView animateKeyframesWithDuration:0.3 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
         [downView setBackgroundColor: self.config.cancelBGViewDismissColor];
-//        [downView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage getShitBGImage:[UIImage imageNamed:@"clearColorImage"]]]];
         
         CancelButton.transform = CGAffineTransformMakeRotation(0);
         [CancelButton setAlpha:0.1f];
@@ -243,19 +218,14 @@
         
     } completion:^(BOOL finished) {
         [weak removeFromSuperview];
-        if (!blcok) {
-            return ;
+        if (blcok) {
+            blcok(finished);
         }
-        //选择button
-        blcok(finished);
     }];
 }
 
 -(void)dismiss{
     
-    if (self.willDisBlock) {
-        self.willDisBlock(YES);
-    }
     UIView *button = [self viewWithTag:10];
     [button setUserInteractionEnabled:false];
     [self setUserInteractionEnabled:false];
@@ -266,19 +236,18 @@
     [self playSound:self.config.closeSound];
 }
 -(void)removeFromSuperview{
+    if (self.disBlock) {
+        self.disBlock(YES);
+    }
     [super removeFromSuperview];
 }
 
 -(void)dealloc
 {
-    NSArray *SubViews = [_window subviews];
-    for (id obj in SubViews) {
-        [obj removeFromSuperview];
-    }
+    [_window.subviews respondsToSelector:@selector(removeFromSuperview)];
     [_window resignKeyWindow];
     [_window removeFromSuperview];
     _window = nil;
-    
 }
 
 -(void)show{
