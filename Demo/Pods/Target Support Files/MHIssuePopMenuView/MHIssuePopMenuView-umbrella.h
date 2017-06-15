@@ -7,7 +7,6 @@
 #import "MHIssuePopMenuViewConfig.h"
 #import "MHPopMenuCustomButton.h"
 #import "MHPopMenuData.h"
-#import "MHPopMenuSoundDic.h"
 #import "MHIssuePopMenuView+Animation.h"
 #import "NSObject+PlaySound.h"
 #import "UIColor+ImageColor.h"
