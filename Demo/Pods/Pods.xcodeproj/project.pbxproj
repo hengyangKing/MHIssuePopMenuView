@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0220DF0EF055E067568461358C5045A1 /* POPCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F1D1D940C6D562269B4A3544C4E69E7 /* POPCustomAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06114C7488B0145DF6F665B7296F761C /* MHIssuePopMenuView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F0A1FAEEF9BCC41DD17E4C9081BA2D /* MHIssuePopMenuView-dummy.m */; };
-		0924B3E01EF2BCE400EC492D /* MHPopMenuSound.h in Headers */ = {isa = PBXBuildFile; fileRef = 0924B3DE1EF2BCE400EC492D /* MHPopMenuSound.h */; };
-		0924B3E11EF2BCE400EC492D /* MHPopMenuSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 0924B3DF1EF2BCE400EC492D /* MHPopMenuSound.m */; };
 		098DAA5289B73EDF421B21EBD2AC0C39 /* MHPopMenuCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14EFF65339D8E48255A829F0AB9F5C /* MHPopMenuCustomButton.m */; };
 		0A3EBD71496A85392E177FF4CA187CBB /* composer_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = F6CBFC17A655808DE121444269267FCF /* composer_open.wav */; };
 		0B3EAD17CA2F0B6B96F53886C8196F93 /* POPLayerExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 46913D5C9A5407074F2E788FC0F54282 /* POPLayerExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,7 +35,6 @@
 		4E070E3DCAC8E1D72593027CC0ACC0E7 /* POPPropertyAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4507671CD38ADFA14907E619332B68 /* POPPropertyAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53908B48111AE3EB40634EE1C86F559A /* POPCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E149E09AE1E6C74859B40A860C0F055 /* POPCGUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		55A8171AEAC2A6F140F8466A269144BC /* POPDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7168557EA13CC59E4DDEC82A37EC7E96 /* POPDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		58C3BDBCAF276F5C39A8933225CC985F /* MHPopMenuSoundDic.h in Headers */ = {isa = PBXBuildFile; fileRef = 60851613AFAD41705B66749B3B4983C0 /* MHPopMenuSoundDic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		591A39CF3524DFD855451C7D066BD301 /* POPAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3957075D8938155212B50AC10054A192 /* POPAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5C0994DB4347B24CA8CCC1A03E6E1669 /* POPAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C2A331628E9909F61770377F288BA /* POPAnimation.mm */; };
 		5C894A772AA59E0E60E3AC3E2B94573B /* MHIssuePopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3ECF5433711CA9859D0CF87812512 /* MHIssuePopMenuView.m */; };
@@ -55,7 +52,6 @@
 		7694B92B042FDC9E67D5DC61BB908D8F /* UIColor+ImageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 94344238EEF22343C644BA9A897CB2EC /* UIColor+ImageColor.m */; };
 		76E2A00900503D21F83FDBDC5093506E /* POPCGUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42D590933DF15150B2D1B3F7F4B94E4B /* POPCGUtils.mm */; };
 		773CC35C12E4E6FB6EE6F44F3F859543 /* POPCustomAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADCEE953DFB1974B8501FBB79488F98E /* POPCustomAnimation.mm */; };
-		79284EF988F22F753B8EA019D15A92DB /* MHPopMenuSoundDic.m in Sources */ = {isa = PBXBuildFile; fileRef = F326A371C52A71BD49A3EAE126EACBD4 /* MHPopMenuSoundDic.m */; };
 		79D1545C117BA62FD2685283DC067908 /* POPLayerExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9467059AAAA05508D133F8B78E71867A /* POPLayerExtras.mm */; };
 		7A0968329A049ABFDF2FADCA9644855B /* pop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35EE46531B8868BA37257A86DE12C9FC /* pop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B22CD3C20A14995E662FA9654EB4143 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7095FFC8C71380E0B543B2CC259474C /* Foundation.framework */; };
@@ -137,8 +133,6 @@
 		03EA1E60232BFA05817BC26ACB8E68BA /* Pods-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Demo-umbrella.h"; sourceTree = "<group>"; };
 		08919912B671E704D4537E81F144F988 /* POP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POP.h; path = pop/POP.h; sourceTree = "<group>"; };
 		08C2AC835EB804105BBC4906C2C10C04 /* MHIssuePopMenuViewConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MHIssuePopMenuViewConfig.m; sourceTree = "<group>"; };
-		0924B3DE1EF2BCE400EC492D /* MHPopMenuSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHPopMenuSound.h; sourceTree = "<group>"; };
-		0924B3DF1EF2BCE400EC492D /* MHPopMenuSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHPopMenuSound.m; sourceTree = "<group>"; };
 		121748EFDA312E8115996B43FF999193 /* POPAnimationRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationRuntime.h; path = pop/POPAnimationRuntime.h; sourceTree = "<group>"; };
 		12275F3C9EA534AAA9AEE0CF6019AF64 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1277AD8D10D752F544CFD497480C060C /* NSObject+PlaySound.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+PlaySound.h"; sourceTree = "<group>"; };
@@ -174,7 +168,6 @@
 		5B5C2A331628E9909F61770377F288BA /* POPAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimation.mm; path = pop/POPAnimation.mm; sourceTree = "<group>"; };
 		5F1D1D940C6D562269B4A3544C4E69E7 /* POPCustomAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPCustomAnimation.h; path = pop/POPCustomAnimation.h; sourceTree = "<group>"; };
 		5FEDE31F7EF21F4B2A2F67FF717FF00D /* POPAnimatableProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimatableProperty.h; path = pop/POPAnimatableProperty.h; sourceTree = "<group>"; };
-		60851613AFAD41705B66749B3B4983C0 /* MHPopMenuSoundDic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MHPopMenuSoundDic.h; sourceTree = "<group>"; };
 		60FFC05262AB9EFADBCA3522CEA272F6 /* POPAnimationRuntime.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimationRuntime.mm; path = pop/POPAnimationRuntime.mm; sourceTree = "<group>"; };
 		61F0A1FAEEF9BCC41DD17E4C9081BA2D /* MHIssuePopMenuView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MHIssuePopMenuView-dummy.m"; sourceTree = "<group>"; };
 		6C0DAAACEAF82B6E92572D64CA45B045 /* MHIssuePopMenuView+Animation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MHIssuePopMenuView+Animation.h"; sourceTree = "<group>"; };
@@ -243,7 +236,6 @@
 		F10C167816A1E45BF98F961B0AAEAC8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19D09D0B881E4C0F664080EFB808FD6 /* KingBase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KingBase-umbrella.h"; sourceTree = "<group>"; };
 		F2D923A9F2C08D9B089F6665A7BDE247 /* MHIssueCancelView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MHIssueCancelView.h; sourceTree = "<group>"; };
-		F326A371C52A71BD49A3EAE126EACBD4 /* MHPopMenuSoundDic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MHPopMenuSoundDic.m; sourceTree = "<group>"; };
 		F55B0BA7ECCBE32F58135991C74E61B5 /* KingBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KingBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CBFC17A655808DE121444269267FCF /* composer_open.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; path = composer_open.wav; sourceTree = "<group>"; };
 		F7095FFC8C71380E0B543B2CC259474C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -314,10 +306,6 @@
 				CD14EFF65339D8E48255A829F0AB9F5C /* MHPopMenuCustomButton.m */,
 				C9C3F7DA185A902CA82A68FF56D20283 /* MHPopMenuData.h */,
 				A4AB60CEB3EE72E3AFE41FF5F6E5762C /* MHPopMenuData.m */,
-				60851613AFAD41705B66749B3B4983C0 /* MHPopMenuSoundDic.h */,
-				F326A371C52A71BD49A3EAE126EACBD4 /* MHPopMenuSoundDic.m */,
-				0924B3DE1EF2BCE400EC492D /* MHPopMenuSound.h */,
-				0924B3DF1EF2BCE400EC492D /* MHPopMenuSound.m */,
 				A199DA6DA6320856A6CC7500EC1D45D6 /* Category */,
 			);
 			path = Classes;
@@ -627,7 +615,6 @@
 				0C13DDF609CEAB39F533CB73E05E1AA3 /* MHIssuePopMenuViewConfig.h in Headers */,
 				6471D4C8911DE8187A8F3E271CC7F0BC /* MHPopMenuCustomButton.h in Headers */,
 				20B3E5C2A57DF4553F80E5D460ED1C03 /* MHPopMenuData.h in Headers */,
-				58C3BDBCAF276F5C39A8933225CC985F /* MHPopMenuSoundDic.h in Headers */,
 				F660B75FD46E51EDD3D8B70A3DDF5A1F /* NSObject+PlaySound.h in Headers */,
 				88BA5598BA639F121E1F234B340861C5 /* UIColor+ImageColor.h in Headers */,
 			);
@@ -637,7 +624,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0924B3E01EF2BCE400EC492D /* MHPopMenuSound.h in Headers */,
 				DAB7C69309EACC974C7B89875547B9BE /* KingBase-umbrella.h in Headers */,
 				697B59427F11C991DA3073168A302AE6 /* MHTopRootController.h in Headers */,
 				0D27B825488B39238ECFF1699D34605A /* MHTopWindow.h in Headers */,
@@ -774,7 +760,6 @@
 				9F42BB026045E023211545A83DF1F643 /* MHIssuePopMenuViewConfig.m in Sources */,
 				098DAA5289B73EDF421B21EBD2AC0C39 /* MHPopMenuCustomButton.m in Sources */,
 				1144C7B886FBEA7983EAD2956DF2CED5 /* MHPopMenuData.m in Sources */,
-				79284EF988F22F753B8EA019D15A92DB /* MHPopMenuSoundDic.m in Sources */,
 				FB8B2A1A0285E0928F731942DC64FDB9 /* NSObject+PlaySound.m in Sources */,
 				7694B92B042FDC9E67D5DC61BB908D8F /* UIColor+ImageColor.m in Sources */,
 			);
@@ -793,7 +778,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				728201D4AAD0FAE45ECBED2275AC2B32 /* KingBase-dummy.m in Sources */,
-				0924B3E11EF2BCE400EC492D /* MHPopMenuSound.m in Sources */,
 				395E0DD3100E1B937EBDE9F838CA21AF /* MHTopRootController.m in Sources */,
 				9D66DADBD927D17A03D2987EA2AFC96A /* MHTopWindow.m in Sources */,
 			);

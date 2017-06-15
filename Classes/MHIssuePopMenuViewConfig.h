@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MHPopMenuSoundDic.h"
 #import "MHPopMenuData.h"
 @interface MHIssuePopMenuViewConfig : NSObject
 @property(nonatomic,strong,readonly)UIImage *cancelImage;
