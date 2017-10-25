@@ -352,7 +352,7 @@
 				DEVELOPMENT_TEAM = ZN667QX87P;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.king.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.king.MHIssuePopMenuView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -365,7 +365,7 @@
 				DEVELOPMENT_TEAM = ZN667QX87P;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.king.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.king.MHIssuePopMenuView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -389,6 +389,7 @@
 				0924B3B11EF2532300EC492D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

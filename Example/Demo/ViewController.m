@@ -20,8 +20,7 @@
 }
 - (IBAction)show:(UIButton *)sender {
         
-    
-     NSArray *buttonArray=@[[MHPopMenuData CreateLabelIconName:@"issue_record_n" andTitle:@"录音"],[MHPopMenuData CreateLabelIconName:@"take_video_n" andTitle:@"录视频"],[MHPopMenuData CreateLabelIconName:@"issue_text_n" andTitle:@"发图文"],[MHPopMenuData CreateLabelIconName:@"userOwn_video_n" andTitle:@"发本地视频"]];
+    NSArray *buttonArray=@[[MHPopMenuData CreateLabelIconName:@"issue_record_n" andTitle:@"录音"],[MHPopMenuData CreateLabelIconName:@"take_video_n" andTitle:@"录视频"],[MHPopMenuData CreateLabelIconName:@"issue_text_n" andTitle:@"发图文"],[MHPopMenuData CreateLabelIconName:@"userOwn_video_n" andTitle:@"发本地视频"]];
     
     MHIssuePopMenuViewConfig *config = [MHIssuePopMenuViewConfig defaultConfig].CancelButtonImage([UIImage imageNamed:@"issue_toolbar_close"]).Items(buttonArray);
 

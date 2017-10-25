@@ -1,6 +1,6 @@
 PODS:
   - KingBase/MHTopWindow (0.0.4)
-  - MHIssuePopMenuView (0.0.1):
+  - MHIssuePopMenuView (0.0.3):
     - pop
   - pop (1.0.9)
 
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KingBase: 798276a502bcc0678757d87559203dc8443b2bdd
-  MHIssuePopMenuView: 8a50a340fd9dc758d3aea06c48eaca20c3475d33
+  MHIssuePopMenuView: 6c1d8e728175a0d863f8dd600674e875fe876b7c
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
 PODFILE CHECKSUM: 5ec6067242170f8cee7239d0548848c96490e5e1

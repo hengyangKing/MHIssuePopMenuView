@@ -28,8 +28,9 @@
 @property (nonatomic,copy) DisMissBlock disBlock;
 @property (nonatomic,copy) SelectdCompletionBlock selectdBlock;
 @property (nonatomic,strong)MHIssuePopMenuViewConfig *config;
-@property (nonatomic,weak) UIView *TopView;
-@property (nonatomic,weak) UIView *BlurView;
+@property (nonatomic,weak) UIView *topView;
+@property (nonatomic,strong) UIView *blurView;
+@property (nonatomic,strong) UIView *containerView;
 
 @end
 @implementation MHIssuePopMenuView
@@ -56,33 +57,48 @@
     }
     return self;
 }
-
+-(UIView *)blurView
+{
+    if (!_blurView) {
+        UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        _blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
+        ((UIVisualEffectView *)_blurView).frame = self.bounds;
+        
+        _blurView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin;
+    }
+    return _blurView;
+}
+-(UIView *)containerView
+{
+    if (!_containerView) {
+        _containerView = [[UIView alloc]initWithFrame:self.bounds];
+        _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin;
+        _containerView.backgroundColor=[UIColor clearColor];
+    }
+    return _containerView;
+}
 -(void)initUI
 {
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    UIView *BlurView = [[UIVisualEffectView alloc] initWithEffect:blur];
-    ((UIVisualEffectView *)BlurView).frame = self.bounds;
-    BlurView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin;
-    _BlurView = BlurView;
-    [self addSubview:_BlurView];
+    [self addSubview:self.blurView];
+    [self addSubview:self.containerView];
     
-    UIView *DownView = [[UIView alloc] init];
+    UIView *bottomView = [[UIView alloc] init];
     CGFloat DownY = kH - 49;
-    [DownView setTag:10];
-    [DownView setFrame:(CGRect){{0,DownY},{kW,49}}];
-//    [DownView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tablebarBG"]]];
-    [DownView setBackgroundColor:self.config.cancelBGViewColor];
+    [bottomView setTag:10];
+    [bottomView setFrame:(CGRect){{0,DownY},{kW,49}}];
+    [bottomView setBackgroundColor:self.config.cancelBGViewColor];
     
     CGFloat CANCELw = 28;
     
-    MHIssueCancelView *CancelButton = [[MHIssueCancelView alloc] initWithFrame:CGRectMake(CGRectGetWidth(DownView.bounds)/2 - CANCELw/2, CGRectGetHeight(DownView.bounds)/2 - CANCELw/2, CANCELw, CANCELw)];
+    MHIssueCancelView *CancelButton = [[MHIssueCancelView alloc] initWithFrame:CGRectMake(CGRectGetWidth(bottomView.bounds)/2 - CANCELw/2, CGRectGetHeight(bottomView.bounds)/2 - CANCELw/2, CANCELw, CANCELw)];
     
 //    UIImage *image = [UIImage imageNamed:@"issue_toolbar_close"];
     [CancelButton setImage:self.config.cancelImage];
     [CancelButton setTag:11];
-    [DownView addSubview:CancelButton];
-    [_BlurView addSubview:DownView];
+    [bottomView addSubview:CancelButton];
+    [self.containerView addSubview:bottomView];
     [self CirculatingItmes];
+    NSLog(@"foo");
 }
 -(void)CirculatingItmes
 {
@@ -113,7 +129,7 @@
         
         [self StartTheAnimationFromValue:fromValue ToValue:toValue Delay:delay Object:button CompletionBlock:^(BOOL CompletionBlock) {
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
-            [_BlurView addGestureRecognizer:tap];
+            [self.containerView addGestureRecognizer:tap];
         } HideDisplay:false];
         index ++;
     }
@@ -126,7 +142,7 @@
     [button setAlpha:0.0f];
     [button setTitleColor:[UIColor colorWithWhite:0.38 alpha:1] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(selectd:) forControlEvents:UIControlEventTouchUpInside];
-    [_BlurView addSubview:button];
+    [self.containerView addSubview:button];
     
     return button;
 }
@@ -166,16 +182,14 @@
     }
     [self HidDelay:0.38f CompletionBlock:nil];
 }
-
--(void)setTopView:(UIView *)TopView{
-    
-    if (![TopView isKindOfClass:[NSNull class]] &&
-        [TopView isKindOfClass:[UIView class]]) {
-        _TopView = TopView;
-        [_BlurView addSubview:_TopView];
+-(void)setTopView:(UIView *)topView
+{
+    if (![topView isKindOfClass:[NSNull class]] &&
+        [topView isKindOfClass:[UIView class]]) {
+        _topView = topView;
+        [self.containerView addSubview:_topView];
     }
 }
-
 -(void)selectd:(MHPopMenuCustomButton *)button
 {
     NSInteger tag = button.tag - (ButtonTag + 1);
@@ -258,6 +272,5 @@
     _window.hidden = false;
     [_window addSubview:self];
     [self playSound:self.config.openSound];
-    
 }
 @end

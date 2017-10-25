@@ -1,6 +1,6 @@
 {
   "name": "MHIssuePopMenuView",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "MHIssuePopMenuView",
   "description": "a popmenu view for the musichome issue pop view",
   "homepage": "https://github.com/hengyangKing/MHIssuePopMenuView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hengyangKing/MHIssuePopMenuView.git",
-    "tag": "0.0.1"
+    "tag": "0.0.3"
   },
   "source_files": [
     "Classes",
