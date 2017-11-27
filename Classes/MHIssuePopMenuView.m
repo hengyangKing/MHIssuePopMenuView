@@ -21,6 +21,7 @@
 #define ButtonWidth kW/HowMucHline
 #define ButtonHigh ButtonWidth
 #define ButtonTag 200
+#define MINTabBarH ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)//tabBar高
 @interface MHIssuePopMenuView()
 {
     UIWindow *_window;
@@ -83,14 +84,14 @@
     [self addSubview:self.containerView];
     
     UIView *bottomView = [[UIView alloc] init];
-    CGFloat DownY = kH - 49;
+    CGFloat DownY = kH - MINTabBarH;
     [bottomView setTag:10];
-    [bottomView setFrame:(CGRect){{0,DownY},{kW,49}}];
+    [bottomView setFrame:(CGRect){{0,DownY},{kW,MINTabBarH}}];
     [bottomView setBackgroundColor:self.config.cancelBGViewColor];
     
     CGFloat CANCELw = 28;
     
-    MHIssueCancelView *CancelButton = [[MHIssueCancelView alloc] initWithFrame:CGRectMake(CGRectGetWidth(bottomView.bounds)/2 - CANCELw/2, CGRectGetHeight(bottomView.bounds)/2 - CANCELw/2, CANCELw, CANCELw)];
+    MHIssueCancelView *CancelButton = [[MHIssueCancelView alloc] initWithFrame:CGRectMake(CGRectGetWidth(bottomView.bounds)/2 - CANCELw/2, (49/2) - CANCELw/2, CANCELw, CANCELw)];
     
 //    UIImage *image = [UIImage imageNamed:@"issue_toolbar_close"];
     [CancelButton setImage:self.config.cancelImage];
@@ -98,7 +99,6 @@
     [bottomView addSubview:CancelButton];
     [self.containerView addSubview:bottomView];
     [self CirculatingItmes];
-    NSLog(@"foo");
 }
 -(void)CirculatingItmes
 {
